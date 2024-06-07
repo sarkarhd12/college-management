@@ -46,7 +46,7 @@ const EditAdmin = () => {
       formData.append("profile", file);
     }
     axios
-      .put(`${baseApiURL()}/admin/details/updateDetails/${id}`, formData, {
+      .put(`${baseApiURL}/admin/details/updateDetails/${id}`, formData, {
         headers: headers,
       })
       .then((response) => {
@@ -73,7 +73,7 @@ const EditAdmin = () => {
     };
     axios
       .post(
-        `${baseApiURL()}/admin/details/getDetails`,
+        `${baseApiURL}/admin/details/getDetails`,
         { employeeId: search },
         { headers }
       )

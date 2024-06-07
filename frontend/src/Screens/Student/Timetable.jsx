@@ -16,7 +16,7 @@ const Timetable = () => {
       };
       axios
         .get(
-          `${baseApiURL()}/timetable/getTimetable`,
+          `${baseApiURL}/timetable/getTimetable`,
           { semester: userData.semester, branch: userData.branch },
           {
             headers: headers,

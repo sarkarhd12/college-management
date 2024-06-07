@@ -25,7 +25,7 @@ const AddFaculty = () => {
       "Content-Type": "application/json",
     };
     axios
-      .get(`${baseApiURL()}/branch/getBranch`, { headers })
+      .get(`${baseApiURL}/branch/getBranch`, { headers })
       .then((response) => {
         if (response.data.success) {
           setBranch(response.data.branches);
@@ -69,7 +69,7 @@ const AddFaculty = () => {
     formData.append("type", "profile");
     formData.append("profile", file);
     axios
-      .post(`${baseApiURL()}/faculty/details/addDetails`, formData, {
+      .post(`${baseApiURL}/faculty/details/addDetails`, formData, {
         headers: headers,
       })
       .then((response) => {
@@ -77,7 +77,7 @@ const AddFaculty = () => {
         if (response.data.success) {
           toast.success(response.data.message);
           axios
-            .post(`${baseApiURL()}/faculty/auth/register`, {
+            .post(`${baseApiURL}/faculty/auth/register`, {
               loginid: data.employeeId,
               password: data.employeeId,
             })

@@ -41,7 +41,7 @@ const AddAdmin = () => {
     formData.append("type", "profile");
     formData.append("profile", file);
     axios
-      .post(`${baseApiURL()}/admin/details/addDetails`, formData, {
+      .post(`${baseApiURL}/admin/details/addDetails`, formData, {
         headers: headers,
       })
       .then((response) => {
@@ -49,7 +49,7 @@ const AddAdmin = () => {
         if (response.data.success) {
           toast.success(response.data.message);
           axios
-            .post(`${baseApiURL()}/Admin/auth/register`, {
+            .post(`${baseApiURL}/Admin/auth/register`, {
               loginid: data.employeeId,
               password: data.employeeId,
             })

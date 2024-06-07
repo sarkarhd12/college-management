@@ -45,8 +45,8 @@ const addBranch = async (req, res) => {
 
 const deleteBranch = async (req, res) => {
     try {
-        let mark = await Branch.findByIdAndDelete(req.params.id);
-        if (!mark) {
+        let branch = await Branch.findByIdAndDelete(req.params.id);
+        if (!branch) {
             return res
                 .status(400)
                 .json({ success: false, message: "No Branch Data Exists!" });

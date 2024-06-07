@@ -9,13 +9,16 @@ const Login = () => {
   const navigate = useNavigate();
   const [selected, setSelected] = useState("Student");
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (data) => {
-    if (data.login !== "" && data.password !== "") {
+    console.log(baseApiURL)
+    console.log(data);
+    if (data.loginid !== "" && data.password !== "") {
       const headers = {
         "Content-Type": "application/json",
       };
       axios
-        .post(`${baseApiURL()}/${selected.toLowerCase()}/auth/login`, data, {
+        .post(`${baseApiURL}/${selected.toLowerCase()}/auth/login`, data, {
           headers: headers,
         })
         .then((response) => {

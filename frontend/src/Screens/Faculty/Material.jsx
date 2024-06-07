@@ -20,7 +20,7 @@ const Material = () => {
   useEffect(() => {
     toast.loading("Loading Subjects");
     axios
-      .get(`${baseApiURL()}/subject/getSubject`)
+      .get(`${baseApiURL}/subject/getSubject`)
       .then((response) => {
         toast.dismiss();
         if (response.data.success) {
@@ -47,7 +47,7 @@ const Material = () => {
     formData.append("type", "material");
     formData.append("material", file);
     axios
-      .post(`${baseApiURL()}/material/addMaterial`, formData, {
+      .post(`${baseApiURL}/material/addMaterial`, formData, {
         headers: headers,
       })
       .then((response) => {

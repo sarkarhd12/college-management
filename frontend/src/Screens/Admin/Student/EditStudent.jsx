@@ -27,7 +27,7 @@ const EditStudent = () => {
       "Content-Type": "application/json",
     };
     axios
-      .get(`${baseApiURL()}/branch/getBranch`, { headers })
+      .get(`${baseApiURL}/branch/getBranch`, { headers })
       .then((response) => {
         if (response.data.success) {
           setBranch(response.data.branches);
@@ -72,7 +72,7 @@ const EditStudent = () => {
       "Content-Type": "multipart/form-data",
     };
     axios
-      .put(`${baseApiURL()}/student/details/updateDetails/${id}`, formData, {
+      .put(`${baseApiURL}/student/details/updateDetails/${id}`, formData, {
         headers: headers,
       })
       .then((response) => {

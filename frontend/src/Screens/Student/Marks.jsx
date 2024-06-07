@@ -16,7 +16,7 @@ const Marks = () => {
     };
     axios
       .post(
-        `${baseApiURL()}/marks/getMarks`,
+        `${baseApiURL}/marks/getMarks`,
         { enrollmentNo: userData.enrollmentNo },
         {
           headers: headers,
